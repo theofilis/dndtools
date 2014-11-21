@@ -20,3 +20,8 @@ If you find anything wrong, just start an issue.
     source env/bin/activate
     pip install -r requirement.txt
 ```
+
+### Windows
+Download [Django Stack](https://bitnami.com/stack/django).
+
+### Mac
