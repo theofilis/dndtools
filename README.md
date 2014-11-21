@@ -1,9 +1,9 @@
-dndtools
+# dndtools
 ==========
 
 An open source Django-based wiki-like web application for DnD.
 
-Status
+## Status
 ------
 This github repository is currently a clone of a private repository. It contains ONLY source codes of the application, not its data. 
 
@@ -11,11 +11,12 @@ Also, this readme file is just an early preview to be updated as soon as someone
 
 If you find anything wrong, just start an issue.
 
-Installation Guide
+## Installation Guide
 -----------------
 
-`
+# Ubuntu
+```
     virtualenv env
-    source env
+    source env/bin/activate
     pip install -r requirement.txt
-`
+```

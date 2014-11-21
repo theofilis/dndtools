@@ -1,5 +1,5 @@
 Django==1.5.5
-MySQL-python==1.2.4
+MySQL-python
 Pillow==2.2.2
 South==0.8.4
 argparse==1.2.1
