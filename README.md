@@ -14,7 +14,7 @@ If you find anything wrong, just start an issue.
 ## Installation Guide
 -----------------
 
-# Ubuntu
+### Ubuntu
 ```
     virtualenv env
     source env/bin/activate
