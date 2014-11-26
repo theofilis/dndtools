@@ -5,6 +5,13 @@ from django.contrib.auth.models import User
 from django.db import models
 
 from dnd.utilities import update_html_cache_attributes
+from django.dispatch import receiver
+from django.db.backends.signals import connection_created
+
+@receiver(connection_created)
+def connection_conf(sender, **kwargs):
+    from django.db import connection
+    connection.connection.text_factory = lambda x: unicode(x, "utf-8", "ignore")
 
 
 class DndEdition(models.Model):

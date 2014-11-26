@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import django_filters2
 from dnd.models import (
     Spell, DndEdition, SpellSchool, SpellSubSchool, SpellDescriptor, FeatCategory,
