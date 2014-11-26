@@ -19,7 +19,7 @@ class DndEdition(models.Model):
         max_length=32,
         unique=True,
     )
-    core = models.BooleanField()
+    core = models.BooleanField(default=False, blank=True)
 
     class Meta:
         ordering = ['name', ]
@@ -127,7 +127,7 @@ class CharacterClass(models.Model):
         max_length=64,
         unique=True,
     )
-    prestige = models.BooleanField()
+    prestige = models.BooleanField(default=False, blank=True)
 
     short_description = models.TextField(
         blank=True,
@@ -290,6 +290,7 @@ class CharacterClassVariantRequiresRace(models.Model):
         help_text='Displayed after Race, no parenthesis! Use to create "or", "and" etc.',
     )
     remove_comma = models.BooleanField(
+        default=False, blank=True,
         help_text='Removes comma before Race! Use to create "or", "and" etc.',
     )
 
@@ -317,6 +318,7 @@ class CharacterClassVariantRequiresFeat(models.Model):
         help_text='Displayed after Feat, no parenthesis! Use to create "or", "and" etc.',
     )
     remove_comma = models.BooleanField(
+        default=False, blank=True,
         help_text='Removes comma before Feat! Use to create "or", "and" etc.',
     )
 
@@ -348,6 +350,7 @@ class CharacterClassVariantRequiresSkill(models.Model):
         help_text='Displayed after Skill, no parenthesis! Use to create "or", "and" etc.',
     )
     remove_comma = models.BooleanField(
+        default=False, blank=True,
         help_text='Removes comma before Skill! Use to create "or", "and" etc.',
     )
 
@@ -670,14 +673,14 @@ class Spell(models.Model):
         Domain,
         through='SpellDomainLevel',
     )
-    verbal_component = models.BooleanField()
-    somatic_component = models.BooleanField()
-    material_component = models.BooleanField()
-    arcane_focus_component = models.BooleanField()
-    divine_focus_component = models.BooleanField()
-    xp_component = models.BooleanField()
-    meta_breath_component = models.BooleanField()
-    true_name_component = models.BooleanField()
+    verbal_component = models.BooleanField(default=False, blank=True)
+    somatic_component = models.BooleanField(default=False, blank=True)
+    material_component = models.BooleanField(default=False, blank=True)
+    arcane_focus_component = models.BooleanField(default=False, blank=True)
+    divine_focus_component = models.BooleanField(default=False, blank=True)
+    xp_component = models.BooleanField(default=False, blank=True)
+    meta_breath_component = models.BooleanField(default=False, blank=True)
+    true_name_component = models.BooleanField(default=False, blank=True)
 
     extra_components = models.CharField(
         max_length=256,
@@ -886,8 +889,8 @@ class Skill(models.Model):
         unique=True,
     )
 
-    trained_only = models.BooleanField()
-    armor_check_penalty = models.BooleanField()
+    trained_only = models.BooleanField(default=False, blank=True)
+    armor_check_penalty = models.BooleanField(default=False, blank=True)
 
     class Meta:
         ordering = ['name', ]

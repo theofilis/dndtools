@@ -1,6 +1,5 @@
 MySQL-python
 Pillow
-South
 argparse
 django
 django-debug-toolbar

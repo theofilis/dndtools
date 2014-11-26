@@ -15,10 +15,20 @@ If you find anything wrong, just start an issue.
 -----------------
 
 ### Ubuntu
+Install all dependencies.
 ```
     virtualenv env
     source env/bin/activate
     pip install -r requirement.txt
+```
+Run django website.
+```
+    cd dndtools/
+    chmod +x manager.py
+    ./manager.py migrate
+    ./manager.py syncdb
+    
+    ./manager.py runserver 0.0.0.0:8000
 ```
 
 ### Windows

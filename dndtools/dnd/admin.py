@@ -274,6 +274,7 @@ class MonsterForm(forms.ModelForm):
 
     class Meta:
         model = Monster
+        fields = ()
 
 
 class MonsterAdmin(admin.ModelAdmin):

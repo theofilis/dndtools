@@ -48,7 +48,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dnd',
-    'south',
     'debug_toolbar',
     'django.contrib.sitemaps',
 )
@@ -63,6 +62,10 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    },
+    'production': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dndtools2-general-ci',
         'USER': 'root',
