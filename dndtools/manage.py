@@ -8,3 +8,7 @@ if __name__ == "__main__":
     from django.core.management import execute_from_command_line
 
     execute_from_command_line(sys.argv)
+
+    from django.db import connection
+    connection.connection.text_factory = lambda x: unicode(x, "utf-8", "ignore")
+

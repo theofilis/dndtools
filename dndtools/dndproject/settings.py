@@ -4,11 +4,6 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-ADMINS = (
-    ('DnDtools', 'dndtools.eu@gmail.com'),
-)
-
-MANAGERS = ADMINS
 TIME_ZONE = 'Europe/Prague'
 LANGUAGE_CODE = 'en-us'
 MEDIA_URL = '/media/'
@@ -26,7 +21,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'pagination.middleware.PaginationMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS += (
@@ -48,16 +43,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dnd',
-    'debug_toolbar',
+    #'debug_toolbar',
     'django.contrib.sitemaps',
 )
 
-SERVER_EMAIL = 'error@dndtools.eu'
 USE_TZ = False
 
 # LOCAL PY
 
 DEBUG = True
+ALLOWED_HOSTS = ['localhost']
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
@@ -82,7 +77,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (STATIC_DIR, )
 SITE_ID = 1
 
-if DEBUG:
+if not DEBUG:
     INTERNAL_IPS = ('127.0.0.1',)
 
     DEBUG_TOOLBAR_PANELS = (
